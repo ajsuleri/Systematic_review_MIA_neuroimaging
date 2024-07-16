@@ -140,25 +140,23 @@ ui <- fluidPage(
       actionButton("show_details", "Show/Hide Details"),
       conditionalPanel(
         condition = "input.show_details % 2 == 1",
-        tags$p("Figure 2 from the manuscript is split into descriptive figure A-C in here which represents the publication trends and sample sizes. Figure 3 from the manuscript is detailed in Result plots A-E. These plots provide more interactive details that supplement the information within the manuscript. Moving the mouse to the upper right corner of a plot will show additional interactive features of the plot."),
+        tags$p("Figure 2 from the manuscript is split into descriptive figure A-C in here which represents the publication trends and sample sizes. Figure 3 from the manuscript is detailed in Result plots A-C. These plots provide more interactive details that supplement the information within the manuscript. Moving the mouse to the upper right corner of a plot will show additional interactive features of the plot."),
         sliderInput("yAxisLimitC", "Set Y-axis limit for sample size (Descriptives C):", min = 50, max = 2500, value = 50, step = 100)
       )
     ),
     mainPanel(
       tabsetPanel(type = "tabs",
                   tabPanel("Table: Studies included in review", DT::dataTableOutput("data_table")),
-                  tabPanel("Descriptives: A. Publication Trend", plotlyOutput("plotPubTrend")),
-                  tabPanel("Descriptives: B. Study Distribution", plotlyOutput("plotPieChart")),
-                  tabPanel("Descriptives: C. Sample Size Trend", 
+                  tabPanel("Descriptives (figure 2): A. Publication Trend", plotlyOutput("plotPubTrend")),
+                  tabPanel("Descriptives (figure 2): B. Study Distribution", plotlyOutput("plotPieChart")),
+                  tabPanel("Descriptives (figure 2): C. Sample Size Trend", 
                            fluidRow(column(8, plotlyOutput("plotSampleSize")),
                                     column(4, textOutput("numericSampleSize")))),
-                  tabPanel("Results: A. Qualitative synthesis for MIA exposure - inflammatory biomarker", plotlyOutput("plot_ib")),
-                  tabPanel("Results: B. Qualitative synthesis for MIA exposure - chorioamnionitis", plotlyOutput("plot_ca")),
-                  tabPanel("Results: C. Qualitative synthesis for MIA exposure - common infections", 
+                  tabPanel("Results (figure 3): A. Qualitative synthesis for MIA exposure - inflammatory biomarkers", plotlyOutput("plot_ib")),
+                  tabPanel("Results (figure 3): B. Qualitative synthesis for MIA exposure - chorioamnionitis", plotlyOutput("plot_ca")),
+                  tabPanel("Results (figure 3): C. Qualitative synthesis for MIA exposure - common infections", 
                            fluidRow(column(8, plotlyOutput("plot_ci")),
-                                    column(4, textOutput("numericSampleSize")))),
-                  tabPanel("Results: D. Qualitative synthesis for MIA exposure - HIV", plotlyOutput("plot_hiv")),
-                  tabPanel("Results: E. Qualitative synthesis for MIA exposure - Zika virus", plotlyOutput("plot_zv"))
+                                    column(4, textOutput("numericSampleSize"))))
       )
     )
   )
