@@ -94,7 +94,7 @@ server <- function(input, output) {
              yaxis = list(title = "Sample Size", range = c(0, input$yAxisLimitC)))
   })
   
-  output$plot_ib <- renderPlotly({ plot_ly(data_ib, x = ~brain_outcome, y = ~count, type = 'bar', color = ~finding, colors = c("Significant finding" = "mediumpurple3", "Null finding" = "orange2"),
+  output$plot_ib <- renderPlotly({ plot_ly(data_ib, x = ~brain_outcome, y = ~count, type = 'bar', color = ~finding, colors = c("Significant finding" = "mediumpurple3", "Null finding" = "seagreen3"),
                                            text = ~paste('Author Names:', author_names, '<br>Developmental Period:', developmental_period, '<br>Imaging modality:', modality, '<br>N:', count),
                                            hoverinfo = 'text', split = ~finding) %>%
       layout(title = "Summary of findings for exposure: inflammatory biomarkers",
@@ -103,7 +103,7 @@ server <- function(input, output) {
              barmode = 'group')
   })
   
-  output$plot_ca <- renderPlotly({ plot_ly(data_ca, x = ~brain_outcome, y = ~count, type = 'bar', color = ~finding, colors = c("Significant finding" = "mediumpurple3", "Null finding" = "orange2"),
+  output$plot_ca <- renderPlotly({ plot_ly(data_ca, x = ~brain_outcome, y = ~count, type = 'bar', color = ~finding, colors = c("Significant finding" = "mediumpurple3", "Null finding" = "seagreen3"),
                                            text = ~paste('Author Names:', author_names, '<br>Developmental Period:', developmental_period, '<br>Imaging modality:', modality,'<br>N:', count),
                                            hoverinfo = 'text', split = ~finding) %>%
       layout(title = "Summary of findings for exposure: chorioamnionitis",
@@ -112,7 +112,7 @@ server <- function(input, output) {
              barmode = 'group')
   })
   
-  output$plot_ci <- renderPlotly({ plot_ly(data_ci, x = ~brain_outcome, y = ~count, type = 'bar', color = ~finding, colors = c("Significant finding" = "mediumpurple3", "Null finding" = "orange2"),
+  output$plot_ci <- renderPlotly({ plot_ly(data_ci, x = ~brain_outcome, y = ~count, type = 'bar', color = ~finding, colors = c("Significant finding" = "mediumpurple3", "Null finding" = "seagreen3"),
                                            text = ~paste('Author Names:', author_names, '<br>Developmental Period:', developmental_period, '<br>Imaging modality:', modality,'<br>N:', count),
                                            hoverinfo = 'text', split = ~finding) %>%
       layout(title = "Summary of findings for exposure: common infections",
