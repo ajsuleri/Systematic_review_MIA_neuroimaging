@@ -136,7 +136,7 @@ ui <- fluidPage(
   titlePanel("The Association Between Maternal Immune Activation and Brain Structure and Function in Human Offspring: A Systematic Review"),
   sidebarLayout(
     sidebarPanel(
-      helpText("Hi reader, this Shiny app provides detailed visualizations for figures 2-5 of the following manuscript: 'The association between maternal immune activation and brain structure and function in human offspring: a systematic review'. DOI link to manuscript will be shown upon publication. Queries about the manuscript or app can be sent to: a.suleri@erasmusmc.nl."),
+      helpText("Hi reader, this Shiny app provides detailed visualizations for figures 2-5 of the following manuscript: 'The association between maternal immune activation and brain structure and function in human offspring: a systematic review'. Check out the paper: https://www.nature.com/articles/s41380-024-02760-w. Queries about the manuscript or app can be sent to: a.suleri@erasmusmc.nl."),
       actionButton("show_details", "Show/Hide Details"),
       conditionalPanel(
         condition = "input.show_details % 2 == 1",
